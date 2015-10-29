@@ -1,0 +1,16 @@
+<html>
+  <body>
+    <h1>About ${subj}</h1>
+    <table>
+      <tr tal:repeat="predicate rdf.get_predicates(subj)">
+        <td>
+           ${predicate}
+        </td>
+        <td>
+           <a href="." tal:repeat="object rdf: subj predicate">${object}</a><br>
+        </td>
+      </tr>
+    </table>
+    <div tal:omit-tag="rdf.close_graph()">
+  </body>
+</html>

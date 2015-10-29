@@ -1,0 +1,15 @@
+<html>
+  <body>
+    <h1>Список доступных субъектов</h1>
+    <select>
+      <option tal:repeat="subj subjects_list">${subj}</option>
+    </select>
+    <table>
+      <tr tal:repeat="subj subjects_list">
+        <td tal:define="url_subj url:subj; subj_to_get code:subj">
+           <a href="" tal:attributes="href string:/about/$subj_to_get">${subj}</a>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
